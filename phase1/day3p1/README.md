@@ -1,6 +1,18 @@
+# 🚀 Day 3 Project 1 - Full Stack Revolution
+
+## 🌐 **Live Demo**
+
 <div align="center">
 
-# 🚀 Day 3 Project 1 - Full Stack Revolution
+### **[🚀 View Live Demo](https://lokeshwaran1310.github.io/AngularTraining/fullstack-frontend/)**
+
+*Experience the complete full-stack application with Spring Boot integration*
+
+</div>
+
+---
+
+<div align="center">
 
 <img src="https://img.shields.io/badge/Angular-18+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">

@@ -1,6 +1,18 @@
+# 🚀 Phase 2 - Day 1 Project 2 - Enterprise Bug Tracker
+
+## 🌐 **Live Demo**
+
 <div align="center">
 
-# 🚀 Phase 2 - Day 1 Project 2 - Enterprise Bug Tracker
+### **[🚀 View Live Demo](https://lokeshwaran1310.github.io/AngularTraining/enterprise/)**
+
+*Experience enterprise-grade Angular patterns and architecture*
+
+</div>
+
+---
+
+<div align="center">
 
 <img src="https://img.shields.io/badge/Angular-18+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">

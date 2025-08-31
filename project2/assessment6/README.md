@@ -1,5 +1,17 @@
 # 🎓 Student Portal - Modern Angular Application
 
+## 🌐 **Live Demo**
+
+<div align="center">
+
+### **[🚀 View Live Demo](https://lokeshwaran1310.github.io/AngularTraining/assessment/)**
+
+*Experience the complete student management system with CRUD operations*
+
+</div>
+
+---
+
 <div align="center">
 
 ![Angular](https://img.shields.io/badge/Angular-20.2.0-red?style=for-the-badge&logo=angular)

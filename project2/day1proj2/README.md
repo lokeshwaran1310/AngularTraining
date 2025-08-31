@@ -1,5 +1,17 @@
 # 🚀 Lokeshwaran M - Professional Portfolio
 
+## 🌐 **Live Demo**
+
+<div align="center">
+
+### **[🚀 View Live Portfolio](https://lokeshwaran1310.github.io/AngularTraining/portfolio/)**
+
+*Experience the complete portfolio with interactive features and animations*
+
+</div>
+
+---
+
 <div align="center">
 
 ![Portfolio Banner](https://img.shields.io/badge/Portfolio-Angular%2018-red?style=for-the-badge&logo=angular&logoColor=white)

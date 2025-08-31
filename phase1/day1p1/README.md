@@ -1,6 +1,18 @@
+# 🚀 Day 1 Project 1 - Bug Tracker Foundation
+
+## 🌐 **Live Demo**
+
 <div align="center">
 
-# 🚀 Day 1 Project 1 - Bug Tracker Foundation
+### **[🚀 View Live Demo](https://lokeshwaran1310.github.io/AngularTraining/bugtracker-day1/)**
+
+*Experience the foundation bug tracker with core Angular concepts*
+
+</div>
+
+---
+
+<div align="center">
 
 <img src="https://img.shields.io/badge/Angular-18+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">

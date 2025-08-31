@@ -2,6 +2,18 @@
 
 ## Lokeshwaran M - Software Developer Portfolio
 
+## 🌐 **Live Demo**
+
+<div align="center">
+
+### **[🚀 View Live Demo](https://lokeshwaran1310.github.io/AngularTraining/portfolio-v2/)**
+
+*Experience the enhanced portfolio with PrimeNG components and advanced features*
+
+</div>
+
+---
+
 <div align="center">
 
 ![Portfolio Banner](https://img.shields.io/badge/Portfolio-Angular%2018-red?style=for-the-badge&logo=angular&logoColor=white)
@@ -12,7 +24,7 @@
 
 **✨ A cutting-edge, responsive portfolio showcasing my journey as a Software Developer ✨**
 
-[🌐 Live Demo](https://your-portfolio-url.com) • [📧 Contact Me](mailto:lokesh13102003@gmail.com) • [📄 Resume](./src/assets/resume.pdf)
+[📧 Contact Me](mailto:lokesh13102003@gmail.com) • [📄 Resume](./src/assets/resume.pdf)
 
 ![GitHub stars](https://img.shields.io/github/stars/lokeshwaran-m/portfolio?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/lokeshwaran-m/portfolio?style=social)

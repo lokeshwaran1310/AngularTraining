@@ -1,6 +1,18 @@
+# 🚀 Day 2 Project 1 - Advanced Bug Tracker
+
+## 🌐 **Live Demo**
+
 <div align="center">
 
-# 🚀 Day 2 Project 1 - Advanced Bug Tracker
+### **[🚀 View Live Demo](https://lokeshwaran1310.github.io/AngularTraining/bugtracker-day2/)**
+
+*Experience advanced Angular patterns and reactive programming*
+
+</div>
+
+---
+
+<div align="center">
 
 <img src="https://img.shields.io/badge/Angular-18+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">

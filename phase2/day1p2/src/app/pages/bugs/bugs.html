@@ -1,0 +1,293 @@
+<div class="bugs-container">
+  <!-- Header Section -->
+  <header class="bugs-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1><i class="fas fa-bug"></i> Bug Tracker</h1>
+        <p>Manage and track all reported issues</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>
+          Report New Bug
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-download"></i>
+          Export
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Stats Overview -->
+  <section class="stats-overview">
+    <div class="stat-item">
+      <div class="stat-icon critical">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <div class="stat-info">
+        <h3>23</h3>
+        <p>Critical</p>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-icon high">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div class="stat-info">
+        <h3>45</h3>
+        <p>High Priority</p>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-icon medium">
+        <i class="fas fa-minus"></i>
+      </div>
+      <div class="stat-info">
+        <h3>67</h3>
+        <p>Medium</p>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-icon low">
+        <i class="fas fa-arrow-down"></i>
+      </div>
+      <div class="stat-info">
+        <h3>89</h3>
+        <p>Low Priority</p>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-icon resolved">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="stat-info">
+        <h3>156</h3>
+        <p>Resolved</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Filters and Search -->
+  <section class="filters-section">
+    <div class="search-filter">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search bugs by title, ID, or reporter...">
+      </div>
+      
+      <div class="filter-controls">
+        <select class="filter-select">
+          <option>All Priorities</option>
+          <option>Critical</option>
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+        
+        <select class="filter-select">
+          <option>All Status</option>
+          <option>Open</option>
+          <option>In Progress</option>
+          <option>Resolved</option>
+          <option>Closed</option>
+        </select>
+        
+        <select class="filter-select">
+          <option>All Assignees</option>
+          <option>John Doe</option>
+          <option>Jane Smith</option>
+          <option>Mike Johnson</option>
+        </select>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Bug List -->
+  <section class="bugs-list">
+    <div class="list-header">
+      <div class="view-toggle">
+        <button class="toggle-btn active" data-view="list">
+          <i class="fas fa-list"></i>
+        </button>
+        <button class="toggle-btn" data-view="grid">
+          <i class="fas fa-th"></i>
+        </button>
+      </div>
+      
+      <div class="sort-controls">
+        <label>Sort by:</label>
+        <select class="sort-select">
+          <option>Date Created</option>
+          <option>Priority</option>
+          <option>Status</option>
+          <option>Assignee</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="bugs-table">
+      <div class="table-header">
+        <div class="col-id">ID</div>
+        <div class="col-title">Title</div>
+        <div class="col-priority">Priority</div>
+        <div class="col-status">Status</div>
+        <div class="col-assignee">Assignee</div>
+        <div class="col-date">Created</div>
+        <div class="col-actions">Actions</div>
+      </div>
+      
+      <div class="bug-item">
+        <div class="col-id">#BUG-001</div>
+        <div class="col-title">
+          <h4>Login form validation not working</h4>
+          <p>Users can submit empty forms without validation</p>
+        </div>
+        <div class="col-priority">
+          <span class="priority-badge critical">Critical</span>
+        </div>
+        <div class="col-status">
+          <span class="status-badge open">Open</span>
+        </div>
+        <div class="col-assignee">
+          <div class="assignee">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="John">
+            <span>John Doe</span>
+          </div>
+        </div>
+        <div class="col-date">2 hours ago</div>
+        <div class="col-actions">
+          <button class="action-btn" title="View Details">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button class="action-btn" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="action-btn" title="Delete">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="bug-item">
+        <div class="col-id">#BUG-002</div>
+        <div class="col-title">
+          <h4>Dashboard charts not loading</h4>
+          <p>Charts show loading spinner indefinitely</p>
+        </div>
+        <div class="col-priority">
+          <span class="priority-badge high">High</span>
+        </div>
+        <div class="col-status">
+          <span class="status-badge in-progress">In Progress</span>
+        </div>
+        <div class="col-assignee">
+          <div class="assignee">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face" alt="Jane">
+            <span>Jane Smith</span>
+          </div>
+        </div>
+        <div class="col-date">5 hours ago</div>
+        <div class="col-actions">
+          <button class="action-btn" title="View Details">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button class="action-btn" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="action-btn" title="Delete">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="bug-item">
+        <div class="col-id">#BUG-003</div>
+        <div class="col-title">
+          <h4>Mobile responsive issues</h4>
+          <p>Layout breaks on mobile devices</p>
+        </div>
+        <div class="col-priority">
+          <span class="priority-badge medium">Medium</span>
+        </div>
+        <div class="col-status">
+          <span class="status-badge resolved">Resolved</span>
+        </div>
+        <div class="col-assignee">
+          <div class="assignee">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Mike">
+            <span>Mike Johnson</span>
+          </div>
+        </div>
+        <div class="col-date">1 day ago</div>
+        <div class="col-actions">
+          <button class="action-btn" title="View Details">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button class="action-btn" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="action-btn" title="Delete">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="bug-item">
+        <div class="col-id">#BUG-004</div>
+        <div class="col-title">
+          <h4>Search functionality slow</h4>
+          <p>Search takes too long to return results</p>
+        </div>
+        <div class="col-priority">
+          <span class="priority-badge low">Low</span>
+        </div>
+        <div class="col-status">
+          <span class="status-badge open">Open</span>
+        </div>
+        <div class="col-assignee">
+          <div class="assignee unassigned">
+            <i class="fas fa-user-slash"></i>
+            <span>Unassigned</span>
+          </div>
+        </div>
+        <div class="col-date">3 days ago</div>
+        <div class="col-actions">
+          <button class="action-btn" title="View Details">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button class="action-btn" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="action-btn" title="Delete">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pagination -->
+  <section class="pagination-section">
+    <div class="pagination-info">
+      <p>Showing 1-4 of 224 bugs</p>
+    </div>
+    <div class="pagination-controls">
+      <button class="page-btn" disabled>
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">...</button>
+      <button class="page-btn">56</button>
+      <button class="page-btn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+</div>

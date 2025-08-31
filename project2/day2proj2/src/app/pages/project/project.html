@@ -1,0 +1,144 @@
+<div class="projects-container">
+  <p-toast></p-toast>
+  <div class="floating-project-elements">
+    <div class="tech-icon-float">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="floating-tech-icon" alt="React">
+    </div>
+    <div class="tech-icon-float">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="floating-tech-icon" alt="Python">
+    </div>
+    <div class="tech-icon-float">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="floating-tech-icon" alt="JavaScript">
+    </div>
+    <div class="tech-icon-float">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="floating-tech-icon" alt="Node.js">
+    </div>
+    <div class="project-symbol">BUILD</div>
+    <div class="project-symbol">DEPLOY</div>
+    <div class="project-symbol">INNOVATE</div>
+  </div>
+  
+  <div class="projects-header">
+    <h1 class="page-title">My Projects</h1>
+    <p class="page-subtitle">Innovative solutions across various domains</p>
+  </div>
+
+  <div class="projects-grid">
+    <p-card header="Brinjal Disease Detection" class="project-card">
+      <ng-template pTemplate="header">
+        <p-image src="/images/brinjal.jpg" alt="Plant disease detection" width="100%" [preview]="true"></p-image>
+      </ng-template>
+      <div class="project-meta">
+        <p-tag value="3 months" severity="info"></p-tag>
+        <p-tag value="Solo Project" severity="secondary"></p-tag>
+      </div>
+      <div class="tech-stack">
+        <p-tag value="Deep Learning" severity="success"></p-tag>
+        <p-tag value="CNN" severity="success"></p-tag>
+      </div>
+      <p>Developed a deep learning model using CNN to detect diseases in brinjal leaves. This project helps farmers identify plant health issues early, improving agricultural productivity.</p>
+      <ng-template pTemplate="footer">
+        <p-button label="View Code" icon="pi pi-github" class="p-button-sm" (click)="viewCode()"></p-button>
+        <p-button label="Live Demo" icon="pi pi-external-link" [outlined]="true" class="p-button-sm" (click)="liveDemo()"></p-button>
+      </ng-template>
+    </p-card>
+
+    <p-card header="Face Mask Detection" class="project-card">
+      <ng-template pTemplate="header">
+        <p-image src="/images/mask.png" alt="Face mask detection" width="100%" [preview]="true"></p-image>
+      </ng-template>
+      <div class="project-meta">
+        <p-tag value="2 months" severity="info"></p-tag>
+        <p-tag value="Solo Project" severity="secondary"></p-tag>
+      </div>
+      <div class="tech-stack">
+        <p-tag value="Computer Vision" severity="success"></p-tag>
+        <p-tag value="CNN" severity="success"></p-tag>
+        <p-tag value="OpenCV" severity="warning"></p-tag>
+      </div>
+      <p>Built a system using CNN and OpenCV to classify whether a person is wearing a mask or not. This was particularly useful during the COVID-19 period to ensure public safety.</p>
+      <ng-template pTemplate="footer">
+        <p-button label="View Code" icon="pi pi-github" class="p-button-sm" (click)="viewCode()"></p-button>
+        <p-button label="Live Demo" icon="pi pi-external-link" [outlined]="true" class="p-button-sm" (click)="liveDemo()"></p-button>
+      </ng-template>
+    </p-card>
+
+    <p-card header="MoveSmart: Automated Bus Station" class="project-card">
+      <ng-template pTemplate="header">
+        <p-image src="/images/bus.png" alt="Smart bus station" width="100%" [preview]="true"></p-image>
+      </ng-template>
+      <div class="project-meta">
+        <p-tag value="4 months" severity="info"></p-tag>
+        <p-tag value="Team of 3" severity="secondary"></p-tag>
+      </div>
+      <div class="tech-stack">
+        <p-tag value="IoT" severity="success"></p-tag>
+        <p-tag value="Real-time Systems" severity="warning"></p-tag>
+      </div>
+      <p>Designed a smart system for rural areas where people wait for buses without knowing the status. Cameras and dashboards track buses and update passengers in real-time, reducing waiting time and uncertainty.</p>
+      <ng-template pTemplate="footer">
+        <p-button label="View Code" icon="pi pi-github" class="p-button-sm" (click)="viewCode()"></p-button>
+        <p-button label="Live Demo" icon="pi pi-external-link" [outlined]="true" class="p-button-sm" (click)="liveDemo()"></p-button>
+      </ng-template>
+    </p-card>
+
+    <p-card header="CO₂ Emission Reduction Platform" class="project-card">
+      <ng-template pTemplate="header">
+        <p-image src="/images/co.jpg" alt="Carbon emission reduction" width="100%" [preview]="true"></p-image>
+      </ng-template>
+      <div class="project-meta">
+        <p-tag value="6 months" severity="info"></p-tag>
+        <p-tag value="Team of 4" severity="secondary"></p-tag>
+      </div>
+      <div class="tech-stack">
+        <p-tag value="Blockchain" severity="success"></p-tag>
+        <p-tag value="ML" severity="warning"></p-tag>
+        <p-tag value="Ethereum" severity="danger"></p-tag>
+      </div>
+      <p>Created a platform where industries can offset their carbon emissions by purchasing green credits from landowners. Implemented Ethereum blockchain for secure transactions and ML models to calculate credit points based on tree data.</p>
+      <ng-template pTemplate="footer">
+        <p-button label="View Code" icon="pi pi-github" class="p-button-sm" (click)="viewCode()"></p-button>
+        <p-button label="Live Demo" icon="pi pi-external-link" [outlined]="true" class="p-button-sm" (click)="liveDemo()"></p-button>
+      </ng-template>
+    </p-card>
+
+    <p-card header="Cardiac Arrest Prediction Web App" class="project-card">
+      <ng-template pTemplate="header">
+        <p-image src="/images/cardiac.jpg" alt="Healthcare application" width="100%" [preview]="true"></p-image>
+      </ng-template>
+      <div class="project-meta">
+        <p-tag value="3 months" severity="info"></p-tag>
+        <p-tag value="Team of 2" severity="secondary"></p-tag>
+      </div>
+      <div class="tech-stack">
+        <p-tag value="Machine Learning" severity="success"></p-tag>
+        <p-tag value="Web Development" severity="warning"></p-tag>
+      </div>
+      <p>Built a web application that predicts the risk of cardiac arrest using machine learning models based on health inputs. It also provides CPR training videos for awareness and preparedness.</p>
+      <ng-template pTemplate="footer">
+        <p-button label="View Code" icon="pi pi-github" class="p-button-sm" (click)="viewCode()"></p-button>
+        <p-button label="Live Demo" icon="pi pi-external-link" [outlined]="true" class="p-button-sm" (click)="liveDemo()"></p-button>
+      </ng-template>
+    </p-card>
+
+    <p-card header="Support Ticket System" class="project-card">
+      <ng-template pTemplate="header">
+        <p-image src="/images/ticket.avif" alt="Support ticket system" width="100%" [preview]="true"></p-image>
+      </ng-template>
+      <div class="project-meta">
+        <p-tag value="2 months" severity="info"></p-tag>
+        <p-tag value="Solo Project" severity="secondary"></p-tag>
+      </div>
+      <div class="tech-stack">
+        <p-tag value="Java" severity="success"></p-tag>
+        <p-tag value="JDBC" severity="warning"></p-tag>
+        <p-tag value="PostgreSQL" severity="danger"></p-tag>
+      </div>
+      <p>Developed a console-based application to manage support tickets. Implemented user and agent roles, with features like ticket creation, assignment, and resolution, backed by a PostgreSQL database.</p>
+      <ng-template pTemplate="footer">
+        <p-button label="View Code" icon="pi pi-github" class="p-button-sm" (click)="showComingSoon()"></p-button>
+        <p-button label="Live Demo" icon="pi pi-external-link" [outlined]="true" class="p-button-sm" (click)="showComingSoon()"></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+
+<div class="hero-section">
+  <div class="mobile-menu-button">
+    <p-button icon="pi pi-bars" (click)="toggleSidebar()" [text]="true" class="menu-btn"></p-button>
+  </div>
+  
+  <p-drawer [(visible)]="sidebarVisible" position="left">
+    <div class="sidebar-menu">
+      <p-button routerLink="/home" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-home"></i><span>&nbsp;&nbsp;Home</span>
+      </p-button>
+      <p-button routerLink="/about" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-user"></i><span>&nbsp;&nbsp;About</span>
+      </p-button>
+      <p-button routerLink="/projects" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-briefcase"></i><span>&nbsp;&nbsp;Projects</span>
+      </p-button>
+      <p-button routerLink="/skills" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-cog"></i><span>&nbsp;&nbsp;Skills</span>
+      </p-button>
+      <p-button routerLink="/experience" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-chart-line"></i><span>&nbsp;&nbsp;Experience</span>
+      </p-button>
+      <p-button routerLink="/certificates" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-verified"></i><span>&nbsp;&nbsp;Certificates</span>
+      </p-button>
+      <p-button routerLink="/contact" (click)="closeSidebar()" [text]="true" class="sidebar-item">
+        <i class="pi pi-envelope"></i><span>&nbsp;&nbsp;Contact</span>
+      </p-button>
+    </div>
+  </p-drawer>
+  
+  <div class="floating-elements">
+    <div class="float-circle circle-1"></div>
+    <div class="float-circle circle-2"></div>
+    <div class="float-circle circle-3"></div>
+    <div class="code-snippet">function createApp() {{ '{' }} return new Application(); {{ '}' }}</div>
+    <div class="code-snippet">@Component({{ '{' }} selector: 'app-root' {{ '}' }})</div>
+    <div class="code-snippet">const developer = new FullStackDeveloper();</div>
+    <div class="code-snippet">if (passionate && skilled) {{ '{' }} buildAmazingApps(); {{ '}' }}</div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="profile-section">
+      <div class="profile-image-container">
+        <div class="image-glow"></div>
+        <img src="/images/profile.jpg" alt="Lokeshwaran M" class="profile-image">
+        <div class="status-indicator"></div>
+      </div>
+      
+      <div class="intro-content">
+        <div class="greeting">Hello, I'm</div>
+        <h1 class="main-title">
+          <span class="name-part">Lokeshwaran</span>
+          <span class="surname-part">M</span>
+        </h1>
+        <div class="role-container">
+          <span class="role-text">Software Developer</span>
+          <div class="role-underline"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="description-section">
+      <p class="main-description">
+        Passionate about crafting innovative solutions through code. 
+        Specializing in full-stack development with modern technologies.
+      </p>
+    </div>
+    
+
+    
+    <div class="action-section">
+      <p-button label="View My Work" icon="pi pi-briefcase" (click)="viewMyWork()" [outlined]="true" class="cta-button primary"></p-button>
+      <p-button label="Get In Touch" icon="pi pi-envelope" (click)="getInTouch()" [outlined]="true" class="cta-button secondary"></p-button>
+      <p-button label="Download Resume" icon="pi pi-download" [outlined]="true" class="cta-button resume"></p-button>
+    </div>
+    
+    <div class="skills-chips">
+      <p-chip><i class="pi pi-code"></i><span>&nbsp;&nbsp;Angular</span></p-chip>
+      <p-chip><i class="pi pi-code"></i><span>&nbsp;&nbsp;TypeScript</span></p-chip>
+      <p-chip><i class="pi pi-server"></i><span>&nbsp;&nbsp;Node.js</span></p-chip>
+      <p-chip><i class="pi pi-database"></i><span>&nbsp;&nbsp;MongoDB</span></p-chip>
+    </div>
+    
+
+  </div>
+  
+
+</div>

@@ -1,0 +1,26 @@
+<header class="main-header">
+  <div class="header-container">
+    <div class="brand">
+      <h1 class="brand-name">Lokeshwaran M</h1>
+      <p class="brand-tagline">Software Developer</p>
+    </div>
+    <nav class="main-nav">
+      <p-button routerLink="/home" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-home"></i><span>&nbsp;&nbsp;Home</span></p-button>
+      <p-button routerLink="/about" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-user"></i><span>&nbsp;&nbsp;About</span></p-button>
+      <p-button routerLink="/projects" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-briefcase"></i><span>&nbsp;&nbsp;Projects</span></p-button>
+      <p-button routerLink="/skills" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-cog"></i><span>&nbsp;&nbsp;Skills</span></p-button>
+      <p-button routerLink="/experience" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-chart-line"></i><span>&nbsp;&nbsp;Experience</span></p-button>
+      <p-button routerLink="/certificates" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-verified"></i><span>&nbsp;&nbsp;Certificates</span></p-button>
+      <p-button routerLink="/contact" routerLinkActive="active" [text]="true" class="nav-button"><i class="pi pi-envelope"></i><span>&nbsp;&nbsp;Contact</span></p-button>
+    </nav>
+  </div>
+</header>
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="loading-spinner">
+    <p-progressSpinner strokeWidth="4" animationDuration="1s"></p-progressSpinner>
+    <p>Opening {{currentPageName}}...</p>
+  </div>
+</div>
+<main>
+<router-outlet></router-outlet>
+</main>

@@ -1,0 +1,169 @@
+<div class="students-container">
+  <h2>Student Management Dashboard</h2>
+  
+  <!-- Statistics Cards -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="pi pi-users"></i>
+      </div>
+      <div class="stat-content">
+        <h3>{{ totalStudents }}</h3>
+        <p>Total Students</p>
+      </div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="pi pi-calendar"></i>
+      </div>
+      <div class="stat-content">
+        <h3>{{ averageAge }}</h3>
+        <p>Average Age</p>
+      </div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="pi pi-building"></i>
+      </div>
+      <div class="stat-content">
+        <h3>{{ mostPopularDepartment }}</h3>
+        <p>Popular Department</p>
+      </div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="pi pi-search"></i>
+      </div>
+      <div class="stat-content">
+        <h3>{{ filteredStudents.length }}</h3>
+        <p>Search Results</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      (input)="onSearch()" 
+      placeholder="Search students by name, email, or department..."
+      class="search-input"
+    >
+  </div>
+  
+  <p-table 
+    [value]="filteredStudents" 
+    [paginator]="true" 
+    [rows]="10"
+    selectionMode="single"
+    dataKey="id"
+    (onRowSelect)="onRowSelect($event)"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-student>
+      <tr>
+        <td (click)="onRowSelect({data: student})" style="cursor: pointer;">{{ student.name }}</td>
+        <td (click)="onRowSelect({data: student})" style="cursor: pointer;">{{ student.email }}</td>
+        <td (click)="onRowSelect({data: student})" style="cursor: pointer;">{{ student.age }}</td>
+        <td (click)="onRowSelect({data: student})" style="cursor: pointer;">{{ student.department }}</td>
+        <td>
+          <button (click)="deleteStudent(student)" class="delete-btn">
+            <i class="pi pi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-dialog 
+    header="Edit Student" 
+    [(visible)]="displayDialog" 
+    [modal]="true" 
+    [style]="{width: '450px'}"
+  >
+    <form [formGroup]="editForm" *ngIf="editForm">
+      <div class="form-group">
+        <label>Name *</label>
+        <input 
+          type="text" 
+          formControlName="name" 
+          class="form-control"
+          [class.error]="editForm.get('name')?.invalid && editForm.get('name')?.touched"
+          (blur)="editForm.get('name')?.markAsTouched()"
+        >
+        <div class="error-message" *ngIf="editForm.get('name')?.invalid && editForm.get('name')?.touched">
+          <span *ngIf="editForm.get('name')?.errors?.['required']">Name is required</span>
+          <span *ngIf="editForm.get('name')?.errors?.['minlength']">Name must be at least 5 characters</span>
+          <span *ngIf="editForm.get('name')?.errors?.['maxlength']">Name must not exceed 50 characters</span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Email *</label>
+        <input 
+          type="email" 
+          formControlName="email" 
+          class="form-control"
+          [class.error]="editForm.get('email')?.invalid && editForm.get('email')?.touched"
+          (blur)="editForm.get('email')?.markAsTouched()"
+        >
+        <div class="error-message" *ngIf="editForm.get('email')?.invalid && editForm.get('email')?.touched">
+          <span *ngIf="editForm.get('email')?.errors?.['required']">Email is required</span>
+          <span *ngIf="editForm.get('email')?.errors?.['pattern']">Email must contain @ and . (e.g., user@example.com)</span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Age *</label>
+        <input 
+          type="number" 
+          formControlName="age" 
+          class="form-control"
+          [class.error]="editForm.get('age')?.invalid && editForm.get('age')?.touched"
+          (blur)="editForm.get('age')?.markAsTouched()"
+        >
+        <div class="error-message" *ngIf="editForm.get('age')?.invalid && editForm.get('age')?.touched">
+          <span *ngIf="editForm.get('age')?.errors?.['required']">Age is required</span>
+          <span *ngIf="editForm.get('age')?.errors?.['min']">Age must be at least 17</span>
+          <span *ngIf="editForm.get('age')?.errors?.['max']">Age must be at most 24</span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Department *</label>
+        <select 
+          formControlName="department" 
+          class="form-control"
+          [class.error]="editForm.get('department')?.invalid && editForm.get('department')?.touched"
+          (blur)="editForm.get('department')?.markAsTouched()"
+        >
+          <option value="">Select Department</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Civil">Civil</option>
+        </select>
+        <div class="error-message" *ngIf="editForm.get('department')?.invalid && editForm.get('department')?.touched">
+          <span *ngIf="editForm.get('department')?.errors?.['required']">Department is required</span>
+        </div>
+      </div>
+    </form>
+    
+    <ng-template pTemplate="footer">
+      <p-button label="Cancel" (onClick)="hideDialog()"></p-button>
+      <p-button label="Save" (onClick)="saveStudent()" [disabled]="editForm.invalid"></p-button>
+    </ng-template>
+  </p-dialog>
+</div>

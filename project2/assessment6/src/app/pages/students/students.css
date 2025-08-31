@@ -1,0 +1,372 @@
+.students-container {
+  padding: 2rem 0;
+}
+
+.students-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--surface-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Statistics Cards */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  background: var(--primary-color);
+  color: var(--surface-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.stat-content h3 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-content p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.search-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--surface-color);
+  color: #1a202c;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(55, 65, 81, 0.1);
+}
+
+.delete-btn {
+  background: var(--delete-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: var(--delete-hover);
+  transform: scale(1.05);
+}
+
+/* PrimeNG Table Styling */
+:host ::ng-deep .p-datatable {
+  background: var(--surface-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-lg) !important;
+  overflow: hidden !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  background: var(--accent-color) !important;
+  color: var(--surface-color) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 1rem !important;
+  border: none !important;
+  text-align: left !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr {
+  background: var(--surface-color) !important;
+  transition: var(--transition) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr:hover {
+  background: #f7fafc !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  color: #1a202c !important;
+  font-weight: 500 !important;
+  padding: 1rem !important;
+  border: none !important;
+  text-align: left !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr.p-highlight {
+  background: rgba(20, 184, 166, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr.p-selectable-row {
+  cursor: pointer !important;
+}
+
+/* PrimeNG Paginator Styling */
+:host ::ng-deep .p-paginator {
+  background: var(--surface-color) !important;
+  border: none !important;
+  border-top: 1px solid var(--border-color) !important;
+  padding: 1rem !important;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  margin: 0 0.25rem !important;
+  transition: var(--transition) !important;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* PrimeNG Dialog Styling */
+:host ::ng-deep .p-dialog {
+  background: var(--surface-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-lg) !important;
+  overflow: hidden !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background: var(--accent-color) !important;
+  color: var(--surface-color) !important;
+  padding: 1.5rem 2rem !important;
+  border: none !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header-icon {
+  color: var(--surface-color) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  border-radius: 50% !important;
+  transition: var(--transition) !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header-icon:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+  background: var(--surface-color) !important;
+  padding: 2rem !important;
+  border: none !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  background: var(--surface-color) !important;
+  padding: 1.5rem 2rem !important;
+  border: none !important;
+  border-top: 1px solid var(--border-color) !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 1rem !important;
+}
+
+/* Form Styling in Dialog */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  background: var(--surface-color);
+  color: #1a202c;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+.form-control.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* PrimeNG Button Styling */
+:host ::ng-deep .p-button {
+  background: var(--primary-color) !important;
+  border: none !important;
+  border-radius: var(--border-radius) !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  transition: var(--transition) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+:host ::ng-deep .p-button:hover {
+  background: var(--primary-dark) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+:host ::ng-deep .p-button.p-button-text {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+:host ::ng-deep .p-button.p-button-text:hover {
+  background: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:host ::ng-deep .p-button:disabled {
+  background: var(--text-secondary) !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Empty State */
+.no-data {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #4a5568;
+  font-size: 1.1rem;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .students-container {
+    padding: 1rem 0;
+  }
+  
+  .students-container h2 {
+    font-size: 1.75rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .stat-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  :host ::ng-deep .p-dialog {
+    width: 95% !important;
+    margin: 1rem !important;
+  }
+  
+  :host ::ng-deep .p-datatable .p-datatable-thead > tr > th,
+  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.75rem 0.5rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  :host ::ng-deep .p-dialog .p-dialog-content {
+    padding: 1.5rem !important;
+  }
+  
+  :host ::ng-deep .p-dialog .p-dialog-footer {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  :host ::ng-deep .p-button {
+    width: 100% !important;
+  }
+}

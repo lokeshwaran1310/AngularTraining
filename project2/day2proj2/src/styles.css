@@ -1,0 +1,320 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* PrimeIcons */
+@import 'primeicons/primeicons.css';
+
+/* PrimeNG Component Overrides - Ensure components work */
+.p-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  user-select: none !important;
+  text-decoration: none !important;
+  border: 1px solid !important;
+  transition: all 0.2s !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px !important;
+  background: #007ad9 !important;
+  color: white !important;
+  font-size: 1rem !important;
+}
+
+.p-button-text {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #007ad9 !important;
+}
+
+.p-button-outlined {
+  background: transparent !important;
+  border-color: #007ad9 !important;
+  color: #007ad9 !important;
+}
+
+.p-button:hover {
+  background: #0056b3 !important;
+}
+
+.p-button-text:hover {
+  background: rgba(0, 122, 217, 0.1) !important;
+}
+
+.p-button-outlined:hover {
+  background: #007ad9 !important;
+  color: white !important;
+}
+
+.p-button-icon {
+  line-height: 1 !important;
+  margin-right: 0.5rem !important;
+}
+
+.p-card {
+  background: white !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  margin-bottom: 1rem !important;
+}
+
+.p-card-header {
+  padding: 1rem !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  font-weight: 600 !important;
+}
+
+.p-card-body {
+  padding: 1rem !important;
+}
+
+.p-card-footer {
+  padding: 1rem !important;
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.p-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 4px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  margin: 0.125rem !important;
+}
+
+.p-tag-success {
+  background: #d4edda !important;
+  color: #155724 !important;
+}
+
+.p-tag-info {
+  background: #d1ecf1 !important;
+  color: #0c5460 !important;
+}
+
+.p-tag-warning {
+  background: #fff3cd !important;
+  color: #856404 !important;
+}
+
+.p-tag-danger {
+  background: #f8d7da !important;
+  color: #721c24 !important;
+}
+
+.p-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 10px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  min-width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.p-badge-success {
+  background: #28a745 !important;
+  color: white !important;
+}
+
+.p-badge-info {
+  background: #17a2b8 !important;
+  color: white !important;
+}
+
+.p-badge-danger {
+  background: #dc3545 !important;
+  color: white !important;
+}
+
+.p-progressspinner {
+  position: relative !important;
+  margin: 0 auto !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: inline-block !important;
+}
+
+.p-progressspinner::before {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 2px solid #dee2e6 !important;
+  border-top: 2px solid #007ad9 !important;
+  border-radius: 50% !important;
+  animation: p-progressspinner-rotate 2s linear infinite !important;
+}
+
+@keyframes p-progressspinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.p-inputtext {
+  padding: 0.5rem !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 4px !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.p-inputtextarea {
+  padding: 0.5rem !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 4px !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  resize: vertical !important;
+}
+
+.p-float-label {
+  position: relative !important;
+  margin-bottom: 1rem !important;
+}
+
+.p-float-label label {
+  position: absolute !important;
+  left: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  transition: all 0.2s !important;
+  pointer-events: none !important;
+  color: #6c757d !important;
+}
+
+.p-float-label input:focus + label,
+.p-float-label input:not(:placeholder-shown) + label,
+.p-float-label textarea:focus + label,
+.p-float-label textarea:not(:placeholder-shown) + label {
+  top: 0 !important;
+  transform: translateY(-50%) scale(0.75) !important;
+  background: white !important;
+  padding: 0 0.25rem !important;
+  color: #007ad9 !important;
+}
+
+.p-progressbar {
+  height: 1rem !important;
+  background: #e9ecef !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+.p-progressbar-value {
+  height: 100% !important;
+  background: #007ad9 !important;
+  transition: width 0.3s !important;
+}
+
+.p-knob {
+  display: inline-block !important;
+}
+
+.p-image {
+  display: inline-block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.p-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 16px !important;
+  background: #e9ecef !important;
+  color: #495057 !important;
+  font-size: 0.875rem !important;
+  margin: 0.125rem !important;
+}
+
+.p-divider {
+  border: none !important;
+  border-top: 1px solid #dee2e6 !important;
+  margin: 1rem 0 !important;
+}
+
+/* Drawer/Sidebar white background */
+.p-drawer {
+  background: white !important;
+}
+
+.p-drawer-content {
+  background: white !important;
+}
+
+/* Toast styling */
+.p-toast {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+
+.p-toast-message {
+  background: white !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  padding: 1rem !important;
+  margin-bottom: 0.5rem !important;
+  min-width: 300px !important;
+}
+
+.p-toast-message-info {
+  border-left: 4px solid #17a2b8 !important;
+}
+
+.p-toast-message-content {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.p-toast-message-icon {
+  color: #17a2b8 !important;
+  font-size: 1.2rem !important;
+  margin-right: 0.75rem !important;
+  margin-top: 0.1rem !important;
+}
+
+.p-toast-message-text {
+  flex: 1 !important;
+}
+
+.p-toast-summary {
+  font-weight: 600 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 0.25rem !important;
+  font-size: 1rem !important;
+}
+
+.p-toast-detail {
+  color: #6c757d !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+.p-toast-icon-close {
+  color: #6c757d !important;
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.p-toast-icon-close:hover {
+  color: #2c3e50 !important;
+}

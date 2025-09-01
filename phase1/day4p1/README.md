@@ -21,7 +21,7 @@
 
 <div align="center">
 
-### 🌐 **[View Live Application](http://localhost:4200)**
+### 🌐 **[View Live Application](https://lokeshwaran1310.github.io/AngularTraining/day4p1-app/login)**
 
 **Frontend:** `http://localhost:4200` | **Backend API:** `http://localhost:8085`
 

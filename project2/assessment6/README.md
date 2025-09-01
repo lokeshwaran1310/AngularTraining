@@ -279,37 +279,37 @@ ng serve --prod
 ### 1. Student Registration Page
 *Professional registration form with real-time validation, charcoal theme, and comprehensive field validation*
 
-![Registration Page](image.png)
+![Registration Page](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/registration-page.png)
 
 ### 2. Student List Page (Data Table)
 *Interactive PrimeNG DataTable with statistics dashboard, search functionality, and CRUD operations*
 
-![Student List Table](image-1.png)
+![Student List Table](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/student-list-table.png)
 
 ### 3. Edit Student Dialog
 *Modal dialog for editing student information with form validation and professional styling*
 
-![Edit Dialog](image-2.png)
+![Edit Dialog](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/edit-dialog.png)
 
 ### 4. Navigation & Routing
 *Professional menubar with ellipse-shaped navigation buttons and routing between pages*
 
-![Navigation Menu](image-3.png)
+![Navigation Menu](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/navigation-routing.png)
 
 ### 5. Mobile Responsive View
 *Fully responsive design optimized for mobile devices with adaptive layouts*
 
-![Mobile Responsive](image-4.png)
+![Mobile Responsive](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/mobile-responsive.png)
 
 ### 6. Dashboard Statistics Cards
 *Real-time analytics showing total students, average age, popular department, and search results*
 
-![Dashboard Statistics](image-5.png)
+![Dashboard Statistics](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/dashboard-statistics.png)
 
 ### 7. Form Validation & Error States
 *Comprehensive validation system with real-time error messages and user feedback*
 
-![Form Validation](image-6.png)(image-7.png)
+![Form Validation](https://raw.githubusercontent.com/lokeshwaran1310/AngularTraining/main/images/form-validation.png)okeshwaran1310/AngularTraining/main/assessment/screenshots/form-validation.png)
 
 ---
 

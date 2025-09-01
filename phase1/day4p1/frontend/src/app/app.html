@@ -1,0 +1,44 @@
+
+<div class="custom-header">
+  <h2 style="margin: 0; color: white; font-weight: bold; font-size: 1.5rem;">{{appName}}</h2>
+  <nav class="header-nav">
+    <a *ngFor="let item of menuItems" 
+       [routerLink]="item.routerLink" 
+       (click)="item.action ? onMenuClick(item) : null"
+       class="nav-link">
+      <i [class]="item.icon"></i> {{item.label}}
+    </a>
+  </nav>
+  <button class="menu-toggle-btn" (click)="toggleSidebar()">
+    <i class="pi pi-bars"></i>
+  </button>
+</div>
+
+<!-- Simple sidebar overlay -->
+<div class="sidebar-overlay" [class.show]="sidebarVisible" (click)="closeSidebar()"></div>
+
+<!-- Simple sidebar -->
+<div class="simple-sidebar" [class.show]="sidebarVisible">
+  <div class="sidebar-header">
+    <h3>Menu</h3>
+    <button class="close-btn" (click)="closeSidebar()">&times;</button>
+  </div>
+  <ul class="sidebar-menu">
+    <li *ngFor="let item of menuItems">
+      <a [routerLink]="item.routerLink" 
+         (click)="item.action ? onMenuClick(item) : closeSidebar()">
+        <i [class]="item.icon"></i> {{item.label}}
+      </a>
+    </li>
+  </ul>
+</div>
+  
+  <main style="padding: 16px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div>
+        <p-card>
+          <router-outlet></router-outlet>
+        </p-card>
+      </div>
+    </div>
+  </main>

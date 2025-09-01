@@ -1,13 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
-@import 'primeng/resources/themes/lara-light-blue/theme.css';
+/* Global Theme Override */
 @import 'primeng/resources/primeng.min.css';
 @import 'primeicons/primeicons.css';
 
+/* Custom Theme Variables */
+:root {
+  --primary-black: #1a1a1a;
+  --secondary-black: #2d2d2d;
+  --light-grey: #f5f5f5;
+  --medium-grey: #9e9e9e;
+  --dark-grey: #424242;
+  --pure-white: #ffffff;
+  --accent-color: #333333;
+}
+
+/* Global Overrides */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-grey) !important;
+  color: var(--primary-black) !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* PrimeNG Component Overrides */
+.p-button {
+  background-color: var(--primary-black) !important;
+  border-color: var(--primary-black) !important;
+  color: var(--pure-white) !important;
+}
+
+.p-button:hover {
+  background-color: var(--secondary-black) !important;
+  border-color: var(--secondary-black) !important;
+}
+
+.p-inputtext {
+  border-color: var(--medium-grey) !important;
+  background-color: var(--pure-white) !important;
+  color: var(--primary-black) !important;
+}
+
+.p-inputtext:focus {
+  border-color: var(--primary-black) !important;
+  box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.2) !important;
+}
+
+.p-card {
+  background-color: var(--pure-white) !important;
+  border: 1px solid var(--medium-grey) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.p-dropdown {
+  background-color: var(--pure-white) !important;
+  border-color: var(--medium-grey) !important;
+}
+
+.p-dropdown:focus {
+  border-color: var(--primary-black) !important;
+  box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.2) !important;
+}
+
+/* Link Overrides */
+a {
+  color: var(--primary-black) !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-black) !important;
+}
 
 a:active {
-  color: #ff6b35;
+  color: var(--dark-grey) !important;
 }
 
 a:visited {
-  color: #8e44ad;
+  color: var(--primary-black) !important;
+}
+
+/* Additional PrimeNG Overrides */
+.p-card .p-card-title {
+  color: var(--primary-black) !important;
+}
+
+.p-card .p-card-subtitle {
+  color: var(--dark-grey) !important;
+}
+
+.p-card .p-card-content {
+  color: var(--primary-black) !important;
+}
+
+/* Remove any blue/purple theme remnants */
+.p-component {
+  color: var(--primary-black) !important;
+}
+
+.p-text-primary {
+  color: var(--primary-black) !important;
+}
+
+.p-text-secondary {
+  color: var(--dark-grey) !important;
 }

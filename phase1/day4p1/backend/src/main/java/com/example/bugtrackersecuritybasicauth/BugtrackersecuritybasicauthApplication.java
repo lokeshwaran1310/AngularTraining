@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.example.bugtrackersecuritybasicauth.entity.Bug;
+import com.example.bugtrackersecuritybasicauth.entity.User;
 import com.example.bugtrackersecuritybasicauth.repository.BugRepository;
+import com.example.bugtrackersecuritybasicauth.repository.UserRepository;
 
 @SpringBootApplication
 public class BugtrackersecuritybasicauthApplication {
@@ -15,8 +17,18 @@ public class BugtrackersecuritybasicauthApplication {
 		SpringApplication.run(BugtrackersecuritybasicauthApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner commandLineRunner(BugRepository bugRepository){
+	public CommandLineRunner commandLineRunner(BugRepository bugRepository, UserRepository userRepository){
 		return args -> {
+			// Create default users
+			if (!userRepository.existsByUsername("admin")) {
+				userRepository.save(new User("admin", "{noop}adminpassword", "ADMIN"));
+			}
+			if (!userRepository.existsByUsername("user")) {
+				userRepository.save(new User("user", "{noop}userpassword", "USER"));
+			}
+			if (!userRepository.existsByUsername("developer")) {
+				userRepository.save(new User("developer", "{noop}developerpassword", "DEVELOPER"));
+			}
 			bugRepository.save(new Bug(null,"Bug 1","Assignee 1","Status 1","proj1"));
 			bugRepository.save(new Bug(null,"Bug 2","Assignee 2","Status 2","proj2"));
 			bugRepository.save(new Bug(null,"Bug 3","Assignee 3","Status 3","proj3"));

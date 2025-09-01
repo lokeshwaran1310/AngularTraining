@@ -19,24 +19,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
-
-        UserDetails admin = User.withUsername("admin")
-            .password("{noop}adminpassword")
-            .roles("ADMIN")
-            .build();
-        UserDetails user = User.withUsername("user")
-            .password("{noop}userpassword")
-            .roles("USER")
-            .build();
-        UserDetails developer = User.withUsername("developer")
-                .password("{noop}developerpassword")
-                .roles("DEVELOPER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user,developer);
-    }
+    // Using CustomUserDetailsService instead of InMemoryUserDetailsManager
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
@@ -46,18 +29,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         http
-            .csrf(csrf->csrf.disable())
+            .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                  .authorizeHttpRequests(auth -> auth
                  .requestMatchers("/auth/**").permitAll()
-                 .requestMatchers("/bugs/all").permitAll()
                  .requestMatchers("/admin/**").hasRole("ADMIN")
                  .requestMatchers("/developer/**").hasAnyRole("ADMIN", "DEVELOPER")
                  .requestMatchers("/bugs/**").hasAnyRole("ADMIN", "USER", "DEVELOPER")
                  .anyRequest().authenticated()
                  )
                  .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                  .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                 .headers(headers -> headers.frameOptions().disable());
                 
         return http.build();
     }
@@ -65,7 +48,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4202", "http://localhost:53000"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);

@@ -4,7 +4,6 @@
       <h1>Bug Tracker Dashboard</h1>
       <div class="user-info">
         <span class="welcome-text">Welcome, {{ username }}!</span>
-        <button class="logout-btn" (click)="onLogout()">Logout</button>
       </div>
     </div>
   </header>
@@ -20,9 +19,10 @@
 
       <div class="dashboard-card">
         <div class="card-icon">📊</div>
-        <h3>Statistics</h3>
-        <p>View bug statistics and reports</p>
-        <button class="card-button" disabled>Coming Soon</button>
+        <h3>Total Bugs</h3>
+        <div class="total-bugs-display">
+          {{totalBugs}}
+        </div>
       </div>
 
       <div class="dashboard-card">

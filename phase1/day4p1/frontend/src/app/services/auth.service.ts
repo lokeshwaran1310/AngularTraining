@@ -4,7 +4,7 @@ import { Observable, catchError, throwError } from "rxjs";
 
 @Injectable({providedIn:'root'})
 export class AuthService {
-  private apiUrl='http://localhost:8082/auth/login';
+  private apiUrl='http://localhost:8088/auth/login';
   constructor(private http:HttpClient) { }
 
   login(username:string,password:string): Observable<any>{
@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   register(username:string,password:string,role:string): Observable<any>{
-    return this.http.post<any>('http://localhost:8084/auth/register',{username,password,role}).pipe(
+    return this.http.post<any>('http://localhost:8088/auth/register',{username,password,role}).pipe(
       catchError((error) => {
         console.error('Error during registration:', error);
          return throwError(() => error);

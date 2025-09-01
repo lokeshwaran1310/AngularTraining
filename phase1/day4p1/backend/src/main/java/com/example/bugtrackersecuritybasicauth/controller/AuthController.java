@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bugtrackersecuritybasicauth.dto.AuthRequestDto;
 import com.example.bugtrackersecuritybasicauth.dto.AuthResponseDto;
+import com.example.bugtrackersecuritybasicauth.dto.RegisterRequestDto;
 import com.example.bugtrackersecuritybasicauth.service.JwtService;
+import com.example.bugtrackersecuritybasicauth.service.UserService;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
@@ -25,6 +28,9 @@ public class AuthController {
     
     @Autowired
     private JwtService jwtService;
+    
+    @Autowired
+    private UserService userService;
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDto> login(@RequestBody AuthRequestDto authRequest) {
@@ -52,5 +58,27 @@ public class AuthController {
         String token = authHeader.substring(7);
         String username = jwtService.extractUsername(token);
         return ResponseEntity.ok(username);
+    }
+    
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody RegisterRequestDto registerRequest) {
+        System.out.println("Register endpoint called with username: " + registerRequest.getUsername());
+        
+        try {
+            String result = userService.registerUser(registerRequest.getUsername(), 
+                                                   registerRequest.getPassword(), 
+                                                   registerRequest.getRole());
+            
+            System.out.println("Registration result: " + result);
+            
+            if (result.equals("Username already exists") || result.contains("cannot be empty")) {
+                return ResponseEntity.badRequest().body(Map.of("message", result, "success", false));
+            }
+            
+            return ResponseEntity.ok(Map.of("message", result, "success", true));
+        } catch (Exception e) {
+            System.out.println("Registration error: " + e.getMessage());
+            return ResponseEntity.status(500).body(Map.of("message", "Registration failed", "success", false));
+        }
     }
 }

@@ -38,14 +38,23 @@ export class RegisterComponent {
 
     this.authService.register(this.username, this.password, this.role).subscribe({
       next: (response) => {
-        this.successMessage = 'Registration successful! Redirecting to login...';
-        setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 2000);
+        this.isLoading = false;
+        if (response.success) {
+          this.successMessage = response.message + ' Redirecting to login...';
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 2000);
+        } else {
+          this.errorMessage = response.message;
+        }
       },
       error: (error) => {
-        this.errorMessage = 'Registration failed. Username might already exist.';
         this.isLoading = false;
+        if (error.error && error.error.message) {
+          this.errorMessage = error.error.message;
+        } else {
+          this.errorMessage = 'Registration failed. Please try again.';
+        }
       }
     });
   }

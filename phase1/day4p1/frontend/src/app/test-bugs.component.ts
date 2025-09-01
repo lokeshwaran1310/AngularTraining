@@ -29,7 +29,7 @@ export class TestBugsComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.http.get<any[]>('http://localhost:8082/bugs/all').subscribe({
+    this.http.get<any[]>('http://localhost:8088/bugs/all').subscribe({
       next: (data) => {
         this.bugs = data;
         this.loading = false;

@@ -4,6 +4,22 @@
     <p class="bug-subtitle">Track and manage your project issues</p>
   </header>
 
+  <div class="search-section">
+    <div class="search-form">
+      <div class="search-row">
+        <label for="searchId" class="search-label">Enter ID:</label>
+        <input 
+          id="searchId"
+          type="number" 
+          [(ngModel)]="searchId" 
+          placeholder="Search by Bug ID..."
+          class="search-input">
+        <button (click)="searchBugs()" class="search-btn">Search</button>
+        <button (click)="clearSearch()" class="clear-btn">Clear</button>
+      </div>
+    </div>
+  </div>
+
   <div class="bug-content">
     <div class="bug-grid" *ngIf="bugs && bugs.length > 0">
       <div class="bug-card" *ngFor="let bug of bugs">

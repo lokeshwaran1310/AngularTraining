@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, signal, OnInit } from '@angular/core';
+import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { SidebarModule } from 'primeng/sidebar';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,20 +21,51 @@ import { SidebarModule } from 'primeng/sidebar';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   protected readonly title = signal('BugTracker');
   sidebarVisible = false;
   appName = "BugTracker";
-  menuItems = [
-    { label: 'Dashboard', icon: 'pi pi-home', routerLink: '/dashboard' },
-    { label: 'Login', icon: 'pi pi-user', routerLink: '/login' },
-    { label: 'Bugs', icon: 'pi pi-cog', routerLink: '/bugs' }
-  ];
+  menuItems: any[] = [];
+  isLoggedIn = false;
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    this.updateMenuItems();
+    // Listen for route changes to update menu
+    this.router.events.subscribe(() => {
+      this.updateMenuItems();
+    });
+  }
+
+  updateMenuItems() {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    
+    if (this.isLoggedIn) {
+      this.menuItems = [
+        { label: 'Dashboard', icon: 'pi pi-home', routerLink: '/dashboard' },
+        { label: 'Bugs', icon: 'pi pi-bug', routerLink: '/bugs' },
+        { label: 'Logout', icon: 'pi pi-sign-out', action: 'logout' }
+      ];
+    } else {
+      this.menuItems = [
+        { label: 'Login', icon: 'pi pi-sign-in', routerLink: '/login' },
+        { label: 'Register', icon: 'pi pi-user-plus', routerLink: '/register' }
+      ];
+    }
+  }
+
+  onMenuClick(item: any) {
+    if (item.action === 'logout') {
+      this.authService.logout();
+      this.router.navigate(['/login']);
+      this.updateMenuItems();
+    }
+    this.closeSidebar();
+  }
 
   toggleSidebar() {
-    console.log('Button clicked! Current state:', this.sidebarVisible);
     this.sidebarVisible = !this.sidebarVisible;
-    console.log('New state:', this.sidebarVisible);
   }
 
   closeSidebar() {

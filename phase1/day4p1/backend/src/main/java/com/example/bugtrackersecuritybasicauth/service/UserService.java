@@ -27,15 +27,33 @@ public class UserService {
             return "Username already exists";
         }
         
-        // Validate role
-        if (role == null || (!role.equals("USER") && !role.equals("DEVELOPER") && !role.equals("ADMIN"))) {
-            role = "USER";
-        }
+        // Security: Only allow USER role for self-registration
+        role = "USER";
         
         User user = new User(username, "{noop}" + password, role);
         userRepository.save(user);
         System.out.println("User registered successfully: " + username);
         
         return "User registered successfully";
+    }
+
+    public String updateUserRole(String username, String newRole) {
+        if (username == null || username.trim().isEmpty()) {
+            return "Username cannot be empty";
+        }
+        
+        if (!newRole.equals("USER") && !newRole.equals("DEVELOPER") && !newRole.equals("ADMIN")) {
+            return "Invalid role";
+        }
+        
+        User user = userRepository.findByUsername(username).orElse(null);
+        if (user == null) {
+            return "User not found";
+        }
+        
+        user.setRole(newRole);
+        userRepository.save(user);
+        
+        return "User role updated successfully";
     }
 }

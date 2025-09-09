@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
       this.menuItems = [
         { label: 'Dashboard', icon: 'pi pi-home', routerLink: '/dashboard' },
         { label: 'Bugs', icon: 'pi pi-bug', routerLink: '/bugs' },
+        { label: 'Admin', icon: 'pi pi-users', routerLink: '/admin' },
         { label: 'Logout', icon: 'pi pi-sign-out', action: 'logout' }
       ];
     } else {

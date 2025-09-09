@@ -33,21 +33,7 @@ export class BugService{
         );
     }
 
-    searchBugs(title?: string, status?: string, assignee?: string): Observable<Bug[]> {
-        let params = new URLSearchParams();
-        if (title) params.append('title', title);
-        if (status) params.append('status', status);
-        if (assignee) params.append('assignee', assignee);
-        
-        const searchUrl = `http://localhost:8085/bugs/search?${params.toString()}`;
-        return this.http.get<any>(searchUrl).pipe(
-            map(response => response.content || response),
-            catchError((error) => {
-                console.error('Error searching bugs:', error);
-                return throwError(() => new Error("Search failed"));
-            })
-        );
-    }
+
 
 
 }

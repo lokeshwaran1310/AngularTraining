@@ -40,11 +40,10 @@
       
       <div class="form-group">
         <label for="role">Role:</label>
-        <select id="role" [(ngModel)]="role" name="role">
-          <option value="USER">User</option>
-          <option value="DEVELOPER">Developer</option>
-          <option value="ADMIN">Admin</option>
+        <select id="role" [(ngModel)]="role" name="role" disabled>
+          <option value="USER">User (Default)</option>
         </select>
+        <small class="role-note">Note: All new users are assigned USER role. Contact admin for role upgrades.</small>
       </div>
       
       <div class="error-message" *ngIf="errorMessage">

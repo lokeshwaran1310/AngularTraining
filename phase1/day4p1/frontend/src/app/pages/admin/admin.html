@@ -1,0 +1,59 @@
+<div class="admin-container">
+  <header class="admin-header">
+    <h1 class="admin-title">Admin Panel</h1>
+    <p class="admin-subtitle">Manage user roles and permissions</p>
+  </header>
+
+  <div class="admin-content">
+    <div class="role-management-card">
+      <h3>Update User Role</h3>
+      
+      <form (ngSubmit)="updateRole()" class="role-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input 
+            type="text" 
+            id="username"
+            [(ngModel)]="username" 
+            name="username"
+            placeholder="Enter username"
+            class="form-input"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="role">New Role:</label>
+          <select 
+            id="role"
+            [(ngModel)]="selectedRole" 
+            name="role"
+            class="form-select">
+            <option value="USER">User</option>
+            <option value="DEVELOPER">Developer</option>
+            <option value="ADMIN">Admin</option>
+          </select>
+        </div>
+
+        <button 
+          type="submit" 
+          [disabled]="isLoading"
+          class="update-btn">
+          {{ isLoading ? 'Updating...' : 'Update Role' }}
+        </button>
+      </form>
+
+      <div class="message" *ngIf="message" [ngClass]="{'success': isSuccess, 'error': !isSuccess}">
+        {{ message }}
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h4>Role Permissions</h4>
+      <ul class="permissions-list">
+        <li><strong>USER:</strong> View bugs only</li>
+        <li><strong>DEVELOPER:</strong> View bugs + Update bug status</li>
+        <li><strong>ADMIN:</strong> Full access + User management</li>
+      </ul>
+    </div>
+  </div>
+</div>

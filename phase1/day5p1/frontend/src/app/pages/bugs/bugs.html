@@ -1,0 +1,51 @@
+<div class="bug-container">
+  <header class="bug-header">
+    <h1 class="bug-title">Bug Management</h1>
+    <p class="bug-subtitle">Track and manage your project issues</p>
+  </header>
+
+  <div class="search-section">
+    <div class="search-form">
+      <div class="search-row">
+        <label for="searchId" class="search-label">Enter ID:</label>
+        <input 
+          id="searchId"
+          type="number" 
+          [(ngModel)]="searchId" 
+          placeholder="Search by Bug ID..."
+          class="search-input">
+        <button (click)="searchBugs()" class="search-btn">Search</button>
+        <button (click)="clearSearch()" class="clear-btn">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bug-content">
+    <div class="bug-grid" *ngIf="bugs && bugs.length > 0">
+      <div class="bug-card" *ngFor="let bug of bugs">
+        <div class="bug-card-header">
+          <h3 class="bug-name">{{bug.title}}</h3>
+          <span class="bug-status" [ngClass]="'status-' + bug.status.toLowerCase()">{{bug.status}}</span>
+        </div>
+        <div class="bug-card-body">
+          <span class="bug-id">#{{bug.id}}</span>
+          <div class="bug-details">
+            <p class="bug-assignee"><strong>Assignee:</strong> {{bug.assignee}}</p>
+            <p class="bug-project"><strong>Project:</strong> {{bug.project}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="!bugs || bugs.length === 0">
+      <div class="empty-icon">🐛</div>
+      <h3>No bugs found</h3>
+      <p>Great! No issues to track at the moment.</p>
+    </div>
+
+    <div class="error-message" *ngIf="error">
+      <span class="error-icon">⚠️</span>
+      {{error}}
+    </div>
+  </div>
+</div>

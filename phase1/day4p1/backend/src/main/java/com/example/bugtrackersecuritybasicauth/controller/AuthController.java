@@ -1,5 +1,7 @@
 package com.example.bugtrackersecuritybasicauth.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,6 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +20,6 @@ import com.example.bugtrackersecuritybasicauth.dto.AuthResponseDto;
 import com.example.bugtrackersecuritybasicauth.dto.RegisterRequestDto;
 import com.example.bugtrackersecuritybasicauth.service.JwtService;
 import com.example.bugtrackersecuritybasicauth.service.UserService;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
@@ -79,6 +81,24 @@ public class AuthController {
         } catch (Exception e) {
             System.out.println("Registration error: " + e.getMessage());
             return ResponseEntity.status(500).body(Map.of("message", "Registration failed", "success", false));
+        }
+    }
+
+    @PutMapping("/admin/role")
+    public ResponseEntity<?> updateUserRole(@RequestBody Map<String, String> request) {
+        try {
+            String username = request.get("username");
+            String role = request.get("role");
+            
+            String result = userService.updateUserRole(username, role);
+            
+            if (result.contains("not found") || result.contains("Invalid") || result.contains("cannot be empty")) {
+                return ResponseEntity.badRequest().body(Map.of("message", result, "success", false));
+            }
+            
+            return ResponseEntity.ok(Map.of("message", result, "success", true));
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(Map.of("message", "Role update failed", "success", false));
         }
     }
 }

@@ -122,3 +122,11 @@ button:disabled {
   background: var(--primary-black);
   color: var(--pure-white);
 }
+
+.role-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--dark-grey);
+  font-style: italic;
+}

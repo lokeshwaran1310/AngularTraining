@@ -1,0 +1,69 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1>Bug Tracker Dashboard</h1>
+      <div class="user-info">
+        <span class="welcome-text">Welcome, {{ username }}!</span>
+        <span class="role-badge">{{ userRole }}</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <div class="card-icon">🐛</div>
+        <h3>Bug Management</h3>
+        <p>View and manage all bugs in the system</p>
+        <button class="card-button" (click)="navigateToBugs()">View Bugs</button>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="card-icon">📊</div>
+        <h3>Total Bugs</h3>
+        <div class="total-bugs-display">{{totalBugs}}</div>
+      </div>
+
+      <div class="dashboard-card status-card">
+        <div class="card-icon">📈</div>
+        <h3>Bug Status</h3>
+        <div class="status-stats">
+          <div class="stat-item open">Open: {{bugStats.open}}</div>
+          <div class="stat-item progress">In Progress: {{bugStats.inProgress}}</div>
+          <div class="stat-item resolved">Resolved: {{bugStats.resolved}}</div>
+          <div class="stat-item closed">Closed: {{bugStats.closed}}</div>
+        </div>
+      </div>
+
+      <div class="dashboard-card time-card">
+        <div class="card-icon">🕒</div>
+        <h3>Current Time</h3>
+        <div class="time-display">
+          {{ currentTime | date:'medium' }}
+        </div>
+      </div>
+
+      <div class="dashboard-card projects-card">
+        <div class="card-icon">📁</div>
+        <h3>Projects</h3>
+        <div class="project-list">
+          <div class="project-item" *ngFor="let project of projectStats">
+            <span class="project-name">{{project.name}}</span>
+            <span class="project-count">{{project.count}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-card recent-card">
+        <div class="card-icon">🔄</div>
+        <h3>Recent Bugs</h3>
+        <div class="recent-list">
+          <div class="recent-item" *ngFor="let bug of recentBugs">
+            <div class="recent-title">{{bug.title}}</div>
+            <div class="recent-status">{{bug.status}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
